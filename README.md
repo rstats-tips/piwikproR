@@ -3,7 +3,7 @@ R package for accessing data from Piwik PRO via API.
 
 [PIWIK PRO](https://www.piwik.pro) is a tool to measure traffic of a website. They offer an [API](https://developers.piwik.pro/en/latest/custom_reports/http_api/http_api.html) for fetching all metrics and dimensions so you can use them in your own program.
 
-This R-Package use the API to fetch the data from PIWIK PRO using R-code. You get the data as tibble (or data.frame). So it's easy to analyze the data with the whole power of R.
+This R-Package uses the API to fetch the data from PIWIK PRO using R-code. You get the data as tibble (or as a data.frame). So it's easy to analyze the data with the whole power of R.
 
 # Installation
 
@@ -41,7 +41,7 @@ piwik_pro_credentials <- list(
  Set the website_id and the date range.
  
  ```
- website_id <- 'my_website_id'
+website_id <- 'my_website_id'
 start.date <- "2021-04-01"
 end.date <- "2021-04-30"
 ```
@@ -70,7 +70,7 @@ columns <- tibble::tribble(
 filters <- build_filter(filters, "and")
  ```
  
- ## Fetch the data
+ ## Fetching the data
  
  ```
  query <- build_query(lubridate::ymd(start.date), lubridate::ymd(end.date), website_id,
@@ -79,6 +79,9 @@ filters <- build_filter(filters, "and")
 )
 data <- send_query(query, token, caching = TRUE, fetch_by_day = FALSE)
 ```
+
+# Metrics and Dimensions Documentation
+PIWIK PRO offers a great documentation of all metrics and dimensions starting here [https://developers.piwik.pro/en/latest/custom_reports/index.html]
 
 # Developing
 
