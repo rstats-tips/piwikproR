@@ -80,6 +80,13 @@ filters <- build_filter(filters, "and")
 data <- send_query(query, token, caching = TRUE, fetch_by_day = FALSE)
 ```
 
+# Developing
+
+I'm using unit tests to test my code. But these tests run against
+a special website_id whose data is not publicly available. So I put all those sensitive
+data into a private package `piwikproRTests`. If this package is not available
+all tests are skipped.
+
 # Issues
 If you find a bug or if you have a feature request feel free and open an [issue](https://github.com/dfv-ms/piwikproR/issues)
 
