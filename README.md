@@ -91,5 +91,6 @@ all tests are skipped.
 If you find a bug or if you have a feature request feel free and open an [issue](https://github.com/dfv-ms/piwikproR/issues)
 
 # Thanks
+![dfv media group](https://english.dfv.de/img/dfv_logo_en.png)
 
 Thanks to my employer [dfv media group](https://english.dfv.de) for the permission to publish this package as open source.
