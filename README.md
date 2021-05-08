@@ -1,2 +1,2 @@
 # piwikproR
-R package for accessing data from Piwik PRO via API
+R package for accessing data from Piwik PRO via API.
