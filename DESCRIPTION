@@ -6,10 +6,10 @@ Version: 0.2.0
 Author: Martin Stingl <martin.stingl@dfv.de>
 Maintainer: Martin Stingl <martin.stingl@dfv.de>
 Description: Run Queries against the API of Piwik Pro. The result is a tibble.
-Url: https://github.com/dfv-ms/piwikproR
+URL: https://github.com/dfv-ms/piwikproR
+BugReports: https://github.com/dfv-ms/piwikproR/issues
 License: GPL (>= 3)
 Encoding: UTF-8
-LazyData: true
 Imports:
     urltools,
     httr,
