@@ -34,7 +34,7 @@ piwik_pro_credentials <- list(
  
  Using these credential you can fetch a token
  ```
- result <- get_login_token(piwik_pro_credentials)
+ token <- get_login_token(piwik_pro_credentials)
  ```
  
  ## Website id

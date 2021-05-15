@@ -57,14 +57,14 @@ piwik_pro_credentials <- list(
  ```
  
  Using these credential you can fetch a token
- ```
- result <- get_login_token(piwik_pro_credentials)
- ```
+```
+token <- get_login_token(piwik_pro_credentials)
+```
  
  ## Website id
  Set the website_id and the date range.
  
- ```
+```
 website_id <- 'my_website_id'
 start.date <- "2021-04-01"
 end.date <- "2021-04-30"
