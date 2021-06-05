@@ -1,9 +1,13 @@
 # piwikproR
 R package for accessing data from Piwik PRO via API.
 
-[PIWIK PRO](https://www.piwik.pro) is a tool to measure traffic of a website. They offer an [API](https://developers.piwik.pro/en/latest/custom_reports/http_api/http_api.html) for fetching all metrics and dimensions so you can use them in your own program.
+[PIWIK PRO](https://www.piwik.pro) is a tool to measure traffic of a website. 
+They offer an [API](https://developers.piwik.pro/en/latest/custom_reports/http_api/http_api.html) 
+for fetching all metrics and dimensions so you can use them in your own program.
 
-This R-Package uses the API to fetch the data from PIWIK PRO using R-code. You get the data as tibble (or as a data.frame). So it's easy to analyze the data with the whole power of R.
+This R-Package uses the API to fetch the data from PIWIK PRO using R-code. 
+You get the data as tibble (or as a data.frame). So it's easy to analyze the data 
+with the whole power of R.
 
 # Installation
 
@@ -20,7 +24,8 @@ library(piwikproR)
 ```
 
 ## Credentials for API, token
-First you need to setup an access to the API. See here: [https://developers.piwik.pro/en/latest/platform/authorized_api_guide.html]
+First you need to setup an access to the API. See here: 
+[https://developers.piwik.pro/en/latest/platform/authorized_api_guide.html]
 
 Let's say you put them into a list:
 
@@ -49,7 +54,8 @@ end.date <- "2021-04-30"
 ## Defining the columns to be fetched
 Now we define the columns we want to fetch. Here's an example:
 
-We want to fetch the date, the url (only the path without the hostname) and the page_views:
+We want to fetch the date, the url (only the path without the hostname) and the 
+page_views:
 ```
 columns <- tibble::tribble(
   ~column, ~transformation,
@@ -81,7 +87,8 @@ data <- send_query(query, token, caching = TRUE, fetch_by_day = FALSE)
 ```
 
 # Metrics and Dimensions Documentation
-PIWIK PRO offers a great documentation of all metrics and dimensions starting here [https://developers.piwik.pro/en/latest/custom_reports/index.html]
+PIWIK PRO offers a great documentation of all metrics and dimensions starting 
+here [https://developers.piwik.pro/en/latest/custom_reports/index.html]
 
 # Developing
 
@@ -91,9 +98,11 @@ data into a private package `piwikproRTests`. If this package is not available
 all tests are skipped.
 
 # Issues
-If you find a bug or if you have a feature request feel free and open an [issue](https://github.com/dfv-ms/piwikproR/issues)
+If you find a bug or if you have a feature request feel free and open an 
+[issue](https://github.com/dfv-ms/piwikproR/issues)
 
 # Thanks
 ![dfv media group](https://english.dfv.de/img/dfv_logo_en.png)
 
-Thanks to my employer [dfv media group](https://english.dfv.de) for the permission to publish this package as open source.
+Thanks to my employer [dfv media group](https://english.dfv.de) for the 
+permission to publish this package as open source.
