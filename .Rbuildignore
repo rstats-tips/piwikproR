@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 ^cache/.*$
 ^LICENSE\.md$
+^cran-comments\.md$
