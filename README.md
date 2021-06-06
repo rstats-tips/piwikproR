@@ -1,7 +1,7 @@
 # piwikproR
 R package for accessing data from Piwik PRO via API.
 
-[PIWIK PRO](https://www.piwik.pro) is a tool to measure traffic of a website. 
+[PIWIK PRO](https://piwik.pro/) is a tool to measure traffic of a website. 
 They offer an [API](https://developers.piwik.pro/en/latest/custom_reports/http_api/http_api.html) 
 for fetching all metrics and dimensions so you can use them in your own program.
 
@@ -104,5 +104,5 @@ If you find a bug or if you have a feature request feel free and open an
 # Thanks
 ![dfv media group](https://english.dfv.de/img/dfv_logo_en.png)
 
-Thanks to my employer [dfv media group](https://english.dfv.de) for the 
+Thanks to my employer [dfv media group](https://english.dfv.de/) for the 
 permission to publish this package as open source.
