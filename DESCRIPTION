@@ -1,11 +1,11 @@
 Package: piwikproR
 Type: Package
-Title: Access Piwik Pro Website Statistics
-Date: 2021-05-06
+Title: Access 'Piwik Pro' Website Statistics
+Date: 2021-06-07
 Version: 0.2.0
 Author: Martin Stingl <martin.stingl@dfv.de>
 Maintainer: Martin Stingl <martin.stingl@dfv.de>
-Description: Run Queries against the API of Piwik Pro. The result is a tibble.
+Description: Run Queries against the API of 'Piwik Pro' <https://developers.piwik.pro/en/latest/custom_reports/http_api/http_api.html>. The result is a tibble.
 URL: https://github.com/dfv-ms/piwikproR
 BugReports: https://github.com/dfv-ms/piwikproR/issues
 License: GPL (>= 3)
