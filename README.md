@@ -11,6 +11,17 @@ with the whole power of R.
 
 # Installation
 
+## CRAN Version
+
+The package is now [available on CRAN](https://cran.r-project.org/web/packages/piwikproR/index.html). 
+So you can install it by running
+
+```
+install.packages("piwikproR")
+```
+
+## Development Version
+
 Using `devtools` it's easy to install piwikproR:
 ```
 devtools::install_github("dfv-ms/piwikproR")
