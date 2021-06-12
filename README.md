@@ -1,6 +1,12 @@
 # piwikproR
 R package for accessing data from Piwik PRO via API.
 
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/piwikproR)](https://CRAN.R-project.org/package=piwikproR)
+[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/last-month/piwikproR?color=blue)](https://r-pkg.org/pkg/piwikproR)
+[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/piwikproR?color=blue)](https://r-pkg.org/pkg/piwikproR)
+<!-- badges: end -->
+
 [PIWIK PRO](https://piwik.pro/) is a tool to measure traffic of a website. 
 They offer an [API](https://developers.piwik.pro/en/latest/custom_reports/http_api/http_api.html) 
 for fetching all metrics and dimensions so you can use them in your own program.
