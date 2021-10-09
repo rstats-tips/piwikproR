@@ -127,8 +127,10 @@ send_query_single <- function(query, token, use_csv, api, caching, caching_dir) 
           httr::content_type("application/vnd.api+json"),
           body = rjson::toJSON(query)
         )
-        dir.create(caching_dir, showWarnings = FALSE)
-        save(result, file=filename)
+        if (httr::status_code(result) == 200) {
+          dir.create(caching_dir, showWarnings = FALSE)
+          save(result, file=filename)
+        }
       }
     } else{
       result <- httr::POST(
