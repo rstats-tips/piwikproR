@@ -74,7 +74,12 @@ send_query <- function(query, token, use_csv = TRUE, fetch_by_day = FALSE,
     }
   }
   if (convert_types) {
-    result_data <- result_data %>% apply_types()
+    if (api == "query") {
+      result_data <- result_data %>% apply_types()
+    }
+    if (api == "events" | api == "sessions") {
+      result_data <- result_data %>% apply_types(timestamp_to_date = FALSE)
+    }
   }
   return(result_data)
 }

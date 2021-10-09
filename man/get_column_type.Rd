@@ -4,10 +4,12 @@
 \alias{get_column_type}
 \title{Convert column-type according to column_name}
 \usage{
-get_column_type(column_name)
+get_column_type(column_name, timestamp_to_date = TRUE)
 }
 \arguments{
 \item{column_name}{string}
+
+\item{timestamp_to_date}{boolean convert timestamp to date}
 }
 \value{
 string suggested type of column

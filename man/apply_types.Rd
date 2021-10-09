@@ -4,10 +4,12 @@
 \alias{apply_types}
 \title{Convert column-type according to column_name}
 \usage{
-apply_types(data)
+apply_types(data, timestamp_to_date = TRUE)
 }
 \arguments{
 \item{data}{tibble}
+
+\item{timestamp_to_date}{boolean convert timestamp to date}
 }
 \value{
 tibble
