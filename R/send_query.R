@@ -174,7 +174,7 @@ send_query_single <- function(query, token, use_csv, api, caching, caching_dir) 
 
     if (httr::status_code(result) == 200) {
       csv <- httr::content(result, "text", encoding = "utf8")
-      csv <- readr::read_csv(csv, col_types = readr::cols(.default = "c"))
+      csv <- readr::read_csv(I(csv), col_types = readr::cols(.default = "c"))
       attr(csv, "spec") <- NULL
       csv
     }
