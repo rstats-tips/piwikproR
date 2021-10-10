@@ -7,3 +7,15 @@ release_questions <- function() {
     "Have you removed piwikproRTests in DESCRIPTION?"
   )
 }
+
+release_questions <- function() {
+  c(
+    "Have you updated NEWS.md?"
+  )
+}
+
+release_questions <- function() {
+  c(
+    "Have you set Version in DESCRIPTON?"
+  )
+}
