@@ -41,7 +41,9 @@ send_query <- function(query, token, use_csv = TRUE, fetch_by_day = FALSE,
     #   mutate(date_to = lead(date_from)) %>%
     #   na.omit()
 
-    if (map_lgl(query$columns, ~ .x[[1]] == "timestamp") %>% any()) {
+    if ((map_lgl(query$columns, ~ .x[[1]] == "timestamp") %>% any()) |
+        api %in% c('sessions', 'events')
+        ){
       # already a timestamp column in columns
     } else {
       query$columns[[length(query$columns) + 1]] <- list("column_id" = "timestamp")
