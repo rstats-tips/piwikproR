@@ -1,9 +1,8 @@
 ## Test environments
-* local OS X install, R 4.1.0 and 4.0.5
-* ubuntu 20.04 LTS, R 4.0.5
-* win-builder (devel and release)
+* local OS X Big Sur, R 4.1.1
 * Checks with r-hub
-
+** Ubuntu Linux 20.04.1 LTS, R-release, GCC (ubuntu-gcc-release)
+** Windows Server 2008 R2 SP1, R-release, 32/64 bit (windows-x86_64-release)
 
 ## R CMD check results
 There were no ERRORs or WARNINGs. 
