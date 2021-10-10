@@ -42,7 +42,7 @@ library(piwikproR)
 
 ## Credentials for API, token
 First you need to setup an access to the API. See here: 
-[https://developers.piwik.pro/en/latest/platform/authorized_api_guide.html]
+[https://developers.piwik.pro/en/latest/platform/getting_started.html#create-api-credentials-and-an-access-token]
 
 Let's say you put them into a list:
 
