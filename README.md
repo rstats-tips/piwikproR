@@ -19,7 +19,7 @@ with the whole power of R.
 
 ## CRAN Version
 
-The package is now [available on CRAN](https://cran.r-project.org/web/packages/piwikproR/index.html). 
+The package is now [available on CRAN](https://CRAN.R-project.org/package=piwikproR). 
 So you can install it by running
 
 ```
