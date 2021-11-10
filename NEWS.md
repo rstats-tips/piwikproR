@@ -1,3 +1,7 @@
+# piwikproR 0.3.2
+
+* Reducing list to value in build_filter for transformation
+
 # piwikproR 0.3.1
 
 * Caching of results only when status code 200 is sent (#6)
