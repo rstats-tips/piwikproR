@@ -1,8 +1,8 @@
 Package: piwikproR
 Type: Package
 Title: Access 'Piwik Pro' Website Statistics
-Date: 2021-10-10
-Version: 0.3.2
+Date: 2021-11-12
+Version: 0.3.3
 Author: Martin Stingl <martin.stingl@dfv.de>
 Maintainer: Martin Stingl <martin.stingl@dfv.de>
 Description: Run Queries against the API of 'Piwik Pro' <https://developers.piwik.pro/en/latest/custom_reports/http_api/http_api.html>. The result is a tibble.
@@ -20,7 +20,7 @@ Imports:
     dplyr,
     rlang,
     stringr,
-    readr,
+    readr (>= 2.1.0),
     digest,
     fs
 RoxygenNote: 7.1.2
