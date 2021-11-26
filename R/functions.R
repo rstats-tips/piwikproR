@@ -1,4 +1,4 @@
-#' Maximum number of line requested
+#' Maximum number of lines requested
 #'
 #' @return int
 MAX_LINES_PER_REQUEST <- function() {
