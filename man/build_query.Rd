@@ -22,11 +22,14 @@ build_query(
 
 \item{website_id}{website_id from piwik}
 
-\item{columns}{tibble containing columns and transformations (metrics and dimensions)}
+\item{columns}{tibble containing columns and transformations
+(metrics and dimensions)}
 
-\item{filters}{list containing filter, best built by \code{\link{build_filter}}}
+\item{filters}{list containing filter, best built by
+\code{\link{build_filter}}}
 
-\item{metric_filters}{list containing filter, best built by \code{\link{build_filter}}}
+\item{metric_filters}{list containing filter, best built by
+\code{\link{build_filter}}}
 
 \item{offset}{offset}
 
@@ -48,8 +51,7 @@ columns <- tibble::tribble(
   "timestamp", "to_hour_of_day",
   "page_views", ""
   )
-  build_query(lubridate::ymd("2021-01-01"), lubridate::ymd("2021-01-19"), "xxx",
-              columns
-  )
+  build_query(lubridate::ymd("2021-01-01"), lubridate::ymd("2021-01-19"),
+              "xxx", columns)
 
 }

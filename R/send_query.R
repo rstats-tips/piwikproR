@@ -6,7 +6,8 @@
 #' @param fetch_by_day logical fetch data day by day
 #' @param api API endpoint ("query", "sessions", "events")
 #' @param caching logical Set TRUE to enable caching
-#' @param caching_dir character Set directory for saving caching data, default cache
+#' @param caching_dir character Set directory for saving caching data, default
+#' cache
 #' @param convert_types logical guess type of columns and set them
 #' @return result as tibble
 #' @importFrom magrittr %>%
@@ -29,7 +30,7 @@
 #'
 
 send_query <- function(query, token, use_csv = TRUE, fetch_by_day = FALSE,
-                       api = "query", caching = FALSE, caching_dir = 'cache',
+                       api = "query", caching = FALSE, caching_dir = "cache",
                        convert_types = TRUE) {
   if (fetch_by_day & query$date_from != query$date_to) {
     dates <- seq.Date(
@@ -37,20 +38,17 @@ send_query <- function(query, token, use_csv = TRUE, fetch_by_day = FALSE,
       to = ymd(query$date_to),
       by = "days"
     )
-    # dates_df <- data.frame(date_from = dates) %>%
-    #   mutate(date_to = lead(date_from)) %>%
-    #   na.omit()
 
     if ((map_lgl(query$columns, ~ .x[[1]] == "timestamp") %>% any()) |
-        api %in% c('sessions', 'events')
-        ){
+        api %in% c("sessions", "events")
+        ) {
       # already a timestamp column in columns
     } else {
-      query$columns[[length(query$columns) + 1]] <- list("column_id" = "timestamp")
+      query$columns[[length(query$columns) + 1]] <-
+        list("column_id" = "timestamp")
     }
 
     send_query_per_date <- function(single_date) {
-      # message(single_date)
       query$date_from <- as.character(single_date)
       query$date_to <- as.character(single_date)
       send_query(query, token, use_csv, fetch_by_day = TRUE, api = api,
@@ -109,9 +107,10 @@ send_query <- function(query, token, use_csv = TRUE, fetch_by_day = FALSE,
 #' @importFrom tibble tibble
 #'
 
-send_query_single <- function(query, token, use_csv, api, caching, caching_dir) {
+send_query_single <- function(query, token, use_csv, api, caching,
+                              caching_dir) {
 
-  fire_request <- function(url, token, query, caching, caching_dir){
+  fire_request <- function(url, token, query, caching, caching_dir) {
     if (caching == TRUE) {
       caching_dir <- fs::path_sanitize(caching_dir)
       request_with_url <- list(query, url)
@@ -124,25 +123,27 @@ send_query_single <- function(query, token, use_csv, api, caching, caching_dir) 
                          hash, ".Rda") %>%
         fs::path_sanitize()
       filename <- paste0(caching_dir, "/", filename)
-      if (file.exists(filename)){
+      if (file.exists(filename)) {
         load(filename)
       }else{
         result <- httr::POST(
           url = url,
-          httr::add_headers(Authorization = paste0(token$token_type, " ", token$access_token)),
+          httr::add_headers(Authorization = paste0(token$token_type, " ",
+                                                   token$access_token)),
           httr::add_headers("Accept-Encoding" = "gzip, deflate"),
           httr::content_type("application/vnd.api+json"),
           body = rjson::toJSON(query)
         )
         if (httr::status_code(result) == 200) {
           dir.create(caching_dir, showWarnings = FALSE)
-          save(result, file=filename)
+          save(result, file = filename)
         }
       }
     } else{
       result <- httr::POST(
         url = url,
-        httr::add_headers(Authorization = paste0(token$token_type, " ", token$access_token)),
+        httr::add_headers(Authorization = paste0(token$token_type, " ",
+                                                 token$access_token)),
         httr::add_headers("Accept-Encoding" = "gzip, deflate"),
         httr::content_type("application/vnd.api+json"),
         body = rjson::toJSON(query)
@@ -159,7 +160,6 @@ send_query_single <- function(query, token, use_csv, api, caching, caching_dir) 
         seq <- 1:count
         names <- paste0(name, "_", seq)
         return(names)
-        # return(paste0(names, collapse = ","))
       }
     }
 
@@ -236,7 +236,6 @@ send_query_single <- function(query, token, use_csv, api, caching, caching_dir) 
         data <- data %>%
           map_dfr(function(x) {
             x <- flatten(x)
-            # x = purrr::map(x, replace_null);
             x <- set_names(x, column_names)
             x
           }) %>%

@@ -11,14 +11,12 @@ get_login_token <- function(credentials) {
                client_id = credentials$client_id,
                client_secret = credentials$client_secret)
 
-  # toJSON(data)
-
   result <- httr::POST(url = url,
                  httr::content_type("application/json"),
                  body = rjson::toJSON(data)
                 )
 
-  if(httr::status_code(result)==200){
+  if (httr::status_code(result) == 200) {
     json   <- httr::content(result, "text")
     data <- try(rjson::fromJSON(json), silent = TRUE)
     data$url <- credentials$url
@@ -27,4 +25,3 @@ get_login_token <- function(credentials) {
     return(NULL)
   }
 }
-

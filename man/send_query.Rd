@@ -28,7 +28,8 @@ send_query(
 
 \item{caching}{logical Set TRUE to enable caching}
 
-\item{caching_dir}{character Set directory for saving caching data, default cache}
+\item{caching_dir}{character Set directory for saving caching data, default
+cache}
 
 \item{convert_types}{logical guess type of columns and set them}
 }

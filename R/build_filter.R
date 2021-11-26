@@ -54,7 +54,8 @@ build_filter <- function(filters, global_operator = "and") {
   )
 }
 
-build_filter_single <- function(column, operator, value, transformation = NULL){
+build_filter_single <- function(column, operator, value,
+                                transformation = NULL) {
   list(
     "operator" = "or",
     "conditions" = list(
@@ -68,5 +69,3 @@ build_filter_single <- function(column, operator, value, transformation = NULL){
     )
   )
 }
-
-
