@@ -6,3 +6,4 @@ cache/*
 cache_piwik/*
 .Renviron
 inst/doc
+docs
