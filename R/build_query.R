@@ -39,9 +39,9 @@ build_query <- function(date_from, date_to, website_id, columns, filters = NULL,
   }
 
   if (max_lines == 0) {
-    limit <- MAX_LINES_PER_REQUEST()
+    limit <- MAX_LINES_PER_REQUEST_ANALYTICS_API()
   } else {
-    limit <- min(max_lines, MAX_LINES_PER_REQUEST())
+    limit <- min(max_lines, MAX_LINES_PER_REQUEST_ANALYTICS_API())
   }
   # Build list for columns
   columns_list <- purrr::pmap(columns, row_to_list)

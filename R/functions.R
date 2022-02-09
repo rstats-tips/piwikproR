@@ -1,7 +1,7 @@
-#' Maximum number of lines requested
+#' Maximum number of lines requested in Analytics-API
 #'
 #' @return int
-MAX_LINES_PER_REQUEST <- function() {
+MAX_LINES_PER_REQUEST_ANALYTICS_API <- function() {
   100000
 }
 

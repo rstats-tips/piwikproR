@@ -66,7 +66,7 @@ send_query <- function(query, token, use_csv = TRUE, fetch_by_day = FALSE,
       (result$data %>% count() + query$offset > query$max_lines)
     ) {
       next_query <- query
-      next_query$offset <- next_query$offset + MAX_LINES_PER_REQUEST()
+      next_query$offset <- next_query$offset + MAX_LINES_PER_REQUEST_ANALYTICS_API()
       next_result <- send_query(next_query, token, use_csv, api = api,
                                 caching = caching, caching_dir = caching_dir,
                                 convert_types = FALSE)
@@ -190,7 +190,7 @@ send_query_single <- function(query, token, use_csv, api, caching,
   url <- paste0(token$url, "/api/analytics/v1/", api, "/")
 
   # Remove max_lines before sending to piwik
-  if (query$max_lines > 0 & query$max_lines < MAX_LINES_PER_REQUEST()) {
+  if (query$max_lines > 0 & query$max_lines < MAX_LINES_PER_REQUEST_ANALYTICS_API()) {
     query$limit <- query$max_lines
   }
   query$max_lines <- NULL
