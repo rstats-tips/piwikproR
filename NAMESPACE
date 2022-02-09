@@ -3,6 +3,7 @@
 export(build_filter)
 export(build_query)
 export(get_login_token)
+export(get_usergroups_list)
 export(get_users_list)
 export(send_query)
 importFrom(dplyr,bind_rows)
