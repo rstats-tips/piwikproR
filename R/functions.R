@@ -5,6 +5,13 @@ MAX_LINES_PER_REQUEST_ANALYTICS_API <- function() {
   100000
 }
 
+#' Maximum number of lines requested in Users-API
+#'
+#' @return int
+MAX_LINES_PER_REQUEST_USERS_API <- function() {
+  1000
+}
+
 #' get_test_credentials
 #' getting credentials for testing
 #'
