@@ -15,6 +15,8 @@ get_users_list <- function(token, offset = 0) {
     next_result <- get_users_list(token, next_offset)
     result_data <- result_data %>% bind_rows(next_result)
   }
+  result_data <- result_data %>%
+    dplyr::mutate(addedAt = lubridate::ymd_hms(addedAt))
   return(result_data)
 }
 

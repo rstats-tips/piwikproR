@@ -15,6 +15,13 @@ get_usergroups_list <- function(token, offset = 0) {
     next_result <- get_usergroups_list(token, next_offset)
     result_data <- result_data %>% bind_rows(next_result)
   }
+
+  result_data <- result_data %>%
+    dplyr::mutate(
+      created_at = lubridate::ymd_hms(created_at),
+      updated_at = lubridate::ymd_hms(updated_at)
+      )
+
   return(result_data)
 }
 
