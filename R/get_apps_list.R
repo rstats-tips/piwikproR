@@ -18,8 +18,8 @@ get_apps_list <- function(token, offset = 0) {
 
   result_data <- result_data %>%
     dplyr::mutate(
-      addedAt = lubridate::ymd_hms(addedAt),
-      updatedAt = lubridate::ymd_hms(updatedAt)
+      addedAt = lubridate::ymd_hms(.data$addedAt),
+      updatedAt = lubridate::ymd_hms(.data$updatedAt)
     )
 
   return(result_data)
