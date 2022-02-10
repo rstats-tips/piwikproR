@@ -26,7 +26,9 @@ get_test_credentials <- function() {
         client_secret = Sys.getenv("R_PIWIK_client_secret"),
         url = Sys.getenv("R_PIWIK_url"),
         default_site = Sys.getenv("R_PIWIK_default_site"),
-        alternative_site = Sys.getenv("R_PIWIK_alternative_site")
+        alternative_site = Sys.getenv("R_PIWIK_alternative_site"),
+        client_id_users = Sys.getenv("R_PIWIK_client_id_users"),
+        client_secret_users = Sys.getenv("R_PIWIK_client_secret_users")
       )
       return(piwik_pro_credentials)
     },
