@@ -64,11 +64,9 @@ get_apps_list_single <- function(token, offset = 0) {
       data <- tibble(
         type = character(0),
         id = character(0),
+        name = character(0),
         addedAt = character(0),
-        role = character(0),
-        email = character(0),
-        organization = character(0),
-        languange = character(0)
+        updatedAt = character(0)
       )
     }
     return(list("data" = data, "meta" = meta))
