@@ -2,6 +2,7 @@
 
 export(build_filter)
 export(build_query)
+export(get_app_detail)
 export(get_apps_list)
 export(get_login_token)
 export(get_metasites_list)
