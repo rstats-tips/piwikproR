@@ -1,7 +1,7 @@
 Package: piwikproR
 Type: Package
 Title: Access 'Piwik Pro' Website Statistics
-Date: 2022-02-08
+Date: 2022-03-07
 Version: 0.4.0
 Author: Martin Stingl <martin.stingl@dfv.de>
 Maintainer: Martin Stingl <martin.stingl@dfv.de>

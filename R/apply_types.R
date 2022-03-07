@@ -7,12 +7,14 @@
 get_column_type <- function(column_name, timestamp_to_date = TRUE) {
   if (is_column_a_metric(column_name)) {
     type_name <- "double"
-  } else if (grepl("^timestamp", column_name)) {
+  } else if (grepl("^timestamp", column_name) & column_name != "timestamp__to_hour_of_day") {
     if (timestamp_to_date) {
       type_name <- "date"
     } else {
       type_name <- "datetime"
     }
+  } else if (column_name == "timestamp__to_hour_of_day") { # Hours to numeric
+    type_name <- "double"
   } else {
     type_name <- "char"
   }
