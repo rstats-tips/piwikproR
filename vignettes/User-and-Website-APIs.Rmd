@@ -1,0 +1,91 @@
+---
+title: "User-and-Website-APIs"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{User-and-Website-APIs}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## User APIs, Apps APIs
+
+The web-interface of Piwik Pro is good for manual setup. But if you need to check
+which permissions a specific user has it gets  disgusting.
+
+That's when you want to use the various APIs Piwik Pro offers to solve this 
+problem programmatically. 
+
+So `piwikproR` was extended by some parts of the users-API and apps-API.
+
+## Which Websites are tracked?
+
+So first, let's fetch a list of websites (called apps in Piwik Pro API).
+
+```{r, eval = FALSE}
+library(piwikproR)
+# Piwik credentials
+piwik_pro_credentials <- list(
+  client_id = "my_client_id",
+  client_secret = "my_client_secret",
+  url = "https://my_site.piwik.pro"
+ )
+# Fetch a Piwik token
+token <- get_login_token(piwik_pro_credentials)
+```
+
+### Apps
+
+```{r, eval = FALSE}
+apps <- get_apps_list(token) 
+```
+
+```{r, echo = FALSE}
+apps <- tibble::tribble(
+  ~type, ~id, ~name, ~addedAt, ~updatedAt,
+  "ppms/meta-site", "some-hex-id-number-1", "site-name-1.com", lubridate::ymd_hms("2022-01-02 08:10:20"), lubridate::ymd_hms("2022-01-04 10:08:10"),
+  "ppms/meta-site", "some-hex-id-number-2", "site-name-2.org", lubridate::ymd_hms("2022-02-02 08:10:20"), lubridate::ymd_hms("2022-02-04 10:08:10"),
+  "ppms/meta-site", "some-hex-id-number-3", "site-name-3.net", lubridate::ymd_hms("2022-03-02 08:10:20"), lubridate::ymd_hms("2022-03-04 10:08:10")
+)
+```
+
+The result of `get_apps_list()` is a data.frame containing the available
+apps with some information, esp. an id.
+
+```{r}
+apps
+```
+
+The id can be used for further queries.
+
+### Metasites
+
+Metasites can be fetched in a similar way:
+
+```{r, eval = FALSE}
+metasites <- get_metasites_list(token)
+```
+
+```{r, echo = FALSE}
+metasites <- tibble::tribble(
+  ~type, ~id, ~name, ~created_at, ~updated_at,
+  "ppms/apps", "some-hex-id-meta-1", "Meta site 1", lubridate::ymd_hms("2022-01-02 08:10:20"), lubridate::ymd_hms("2022-01-04 10:08:10"),
+  "ppms/apps", "some-hex-id-meta-2", "Meta site 2", lubridate::ymd_hms("2022-02-02 08:10:20"), lubridate::ymd_hms("2022-02-04 10:08:10"),
+  "ppms/apps", "some-hex-id-meta-3", "Meta site 3", lubridate::ymd_hms("2022-03-02 08:10:20"), lubridate::ymd_hms("2022-03-04 10:08:10")
+)
+```
+
+The result looks similar. Unfortunately Piwik Pro named the fields slightly different.
+
+```{r}
+metasites
+```
+
+
+
