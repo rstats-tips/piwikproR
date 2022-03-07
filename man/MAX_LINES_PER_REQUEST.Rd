@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{MAX_LINES_PER_REQUEST}
 \alias{MAX_LINES_PER_REQUEST}
-\title{Maximum number of line requested}
+\title{Maximum number of lines requested}
 \usage{
 MAX_LINES_PER_REQUEST()
 }
@@ -10,5 +10,5 @@ MAX_LINES_PER_REQUEST()
 int
 }
 \description{
-Maximum number of line requested
+Maximum number of lines requested
 }
