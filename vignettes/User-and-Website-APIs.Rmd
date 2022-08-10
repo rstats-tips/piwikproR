@@ -16,8 +16,8 @@ knitr::opts_chunk$set(
 
 ## User APIs, Apps APIs
 
-The web-interface of Piwik Pro is good for manual setup. But if you need to check
-which permissions a specific user has it gets  disgusting.
+The web interface of Piwik Pro is good for manual setup. But if you need to check
+which permissions a specific user has it gets disgusting.
 
 That's when you want to use the various APIs Piwik Pro offers to solve this 
 problem programmatically. 
@@ -66,7 +66,7 @@ The id can be used for further queries.
 
 ### Metasites
 
-Metasites can be fetched in a similar way:
+Metasites can be fetched similarly:
 
 ```{r, eval = FALSE}
 metasites <- get_metasites_list(token)
@@ -81,11 +81,14 @@ metasites <- tibble::tribble(
 )
 ```
 
-The result looks similar. Unfortunately Piwik Pro named the fields slightly different.
+The result looks similar. Unfortunately Piwik Pro named the fields slightly differently.
 
 ```{r}
 metasites
 ```
+# App Details
+
+# Users and Permissions
 
 
 
