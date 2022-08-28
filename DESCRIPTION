@@ -25,7 +25,7 @@ Imports:
     fs,
     tidyr,
     glue
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Suggests: 
     testthat (>= 3.0.0),
     knitr,
