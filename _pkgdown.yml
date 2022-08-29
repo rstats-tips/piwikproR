@@ -1,6 +1,7 @@
 url: https://piwikproR.rstats-tips.net
 template:
   bootstrap: 5
+  package: pkgdown4gdpr
   includes:
     before_body: >
      <script type="text/javascript">
