@@ -1,3 +1,9 @@
+# piwikproR 0.4,0
+
+* Added functions to access user- and website-API to fetch user-permissions and
+site-configuration
+* Added vignettes
+
 # piwikproR 0.3.2
 
 * Reducing list to value in build_filter for transformation
