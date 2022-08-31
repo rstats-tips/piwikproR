@@ -6,5 +6,8 @@
 ^CRAN-RELEASE$
 ^cache_piwik
 ^\.github$
-^doc
 ^revdep
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+vignettes/legal.Rmd
