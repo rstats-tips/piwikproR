@@ -119,6 +119,9 @@ all tests are skipped.
 If you find a bug or if you have a feature request feel free and open an 
 [issue](https://github.com/dfv-ms/piwikproR/issues)
 
+# Documentation
+Further documentation can be found here: https://PiwikProR.rstats-tips.net/index.html
+
 # Thanks
 ![dfv media group](vignettes/figures/dfv_logo_en.png)
 
