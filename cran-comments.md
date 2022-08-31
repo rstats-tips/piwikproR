@@ -7,9 +7,13 @@
 ## R CMD check results
 There were no ERRORs or WARNINGs. 
 
-There was 1 NOTE:
+There was 2 NOTEs:
 
-* checking CRAN incoming feasibility ... NOTE
+* checking for detritus in the temp directory ... NOTE
+  'lastMiKTeXException'
+Found the following files/directories:
+* checking HTML version of manual ... NOTE
+Skipping checking HTML validation: no command 'tidy' found
 
 
 ## Downstream dependencies
