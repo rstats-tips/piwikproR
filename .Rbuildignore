@@ -6,3 +6,4 @@
 ^CRAN-RELEASE$
 ^cache_piwik
 ^\.github$
+^doc
