@@ -1,3 +1,7 @@
+# piwikproR 0.4.1
+
+* Print API-request when http-request fails
+
 # piwikproR 0.4.0
 
 * Added functions to access user- and website-API to fetch user-permissions and
