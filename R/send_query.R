@@ -149,6 +149,12 @@ send_query_single <- function(query, token, use_csv, api, caching,
         body = rjson::toJSON(query)
       )
     }
+    if(httr::status_code(result) != "200") {
+      stop("Exit because of status code ", httr::status_code(result),
+           "\nUrl war:\n", url,
+           "\nRequest was: \n",
+           rjson::toJSON(query))
+    }
     return(result)
   }
 
