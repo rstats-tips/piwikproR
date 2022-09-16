@@ -32,7 +32,7 @@
 send_query <- function(query, token, use_csv = TRUE, fetch_by_day = FALSE,
                        api = "query", caching = FALSE, caching_dir = "cache",
                        convert_types = TRUE) {
-  if (fetch_by_day & query$date_from != query$date_to) {
+  if (fetch_by_day && query$date_from != query$date_to) {
     dates <- seq.Date(
       from = ymd(query$date_from),
       to = ymd(query$date_to),
@@ -62,7 +62,7 @@ send_query <- function(query, token, use_csv = TRUE, fetch_by_day = FALSE,
                                 caching = caching, caching_dir = caching_dir)
     result_data <- result$data
 
-    if ((result$meta$count > result$data %>% count() + query$offset) &
+    if ((result$meta$count > result$data %>% count() + query$offset) &&
       (result$data %>% count() + query$offset > query$max_lines)
     ) {
       next_query <- query
@@ -77,7 +77,7 @@ send_query <- function(query, token, use_csv = TRUE, fetch_by_day = FALSE,
     if (api == "query") {
       result_data <- result_data %>% apply_types()
     }
-    if (api == "events" | api == "sessions") {
+    if (api == "events" ||  api == "sessions") {
       result_data <- result_data %>% apply_types(timestamp_to_date = FALSE)
     }
   }
@@ -154,7 +154,7 @@ send_query_single <- function(query, token, use_csv, api, caching,
 
   generate_column_names <- function(length_of_fields) {
     get_names_by_count <- function(name, count) {
-      if (count == 1 | count == 0) {
+      if (count == 1 || count == 0) {
         return(c(name))
       } else {
         seq <- 1:count
@@ -190,7 +190,7 @@ send_query_single <- function(query, token, use_csv, api, caching,
   url <- paste0(token$url, "/api/analytics/v1/", api, "/")
 
   # Remove max_lines before sending to piwik
-  if (query$max_lines > 0 & query$max_lines < MAX_LINES_PER_REQUEST_ANALYTICS_API()) {
+  if (query$max_lines > 0 && query$max_lines < MAX_LINES_PER_REQUEST_ANALYTICS_API()) {
     query$limit <- query$max_lines
   }
   query$max_lines <- NULL

@@ -55,5 +55,5 @@ is_column_a_metric <- function(column_name) {
  "Ecommerce conversion rate",   "ecommerce_conversion_rate", "session", "float",
         "Events per session",          "events_per_session", "session", "float"
 )
-  (column_name %in% metrics$Column.ID) | (is_dimension_numeric(column_name))
+  (column_name %in% metrics$Column.ID) || (is_dimension_numeric(column_name))
 }
