@@ -1,6 +1,9 @@
 # piwikproR
 R package for accessing data from Piwik PRO via API.
 
+Note: Piwik Pro is skipping the free core plan in December 2025. ([https://piwikpro.de/blog/piwik-pro-neue-preisstruktur/])
+So I won't be able to test this package using real API access in my free time. So the package won't be maintained anymore.
+
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/piwikproR)](https://CRAN.R-project.org/package=piwikproR)
 [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/last-month/piwikproR?color=blue)](https://r-pkg.org/pkg/piwikproR)
