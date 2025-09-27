@@ -6,7 +6,7 @@ Version: 0.4.1
 Author: Martin Stingl <martin.stingl@dfv.de>
 Maintainer: Martin Stingl <martin.stingl@dfv.de>
 Description: Run Queries against the API of 'Piwik Pro' <https://developers.piwik.pro/en/latest/custom_reports/http_api/http_api.html>. The result is a tibble.
-URL: https://piwikpror.rstats-tips.net
+URL: https://piwikproR.rstats-tips.net
 BugReports: https://github.com/dfv-ms/piwikproR/issues
 License: GPL (>= 3)
 Encoding: UTF-8
